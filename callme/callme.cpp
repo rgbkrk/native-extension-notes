@@ -9,8 +9,20 @@ void CallThis(const FunctionCallbackInfo<Value> & args) {
   return;
 }
 
+void CallThisWithThis(const FunctionCallbackInfo<Value> & args) {
+  Isolate * isolate = args.GetIsolate();
+  Local<Function> cb = Local<Function>::Cast(args[0]);
+
+  Local<Value> argv[1] = {args[1]};
+
+  cb->Call(Null(isolate), 1, argv);
+  return;
+}
+
+
 void Init(Local<Object> exports) {
   NODE_SET_METHOD(exports, "callthis", CallThis);
+  NODE_SET_METHOD(exports, "callthis_withthis", CallThisWithThis);
 }
 
 NODE_MODULE(callback, Init)
