@@ -7,8 +7,10 @@ void CallThis(const FunctionCallbackInfo<Value> & args) {
   Local<Function> cb = Local<Function>::Cast(args[0]);
 
   if (args.Length() >= 2) {
-    Local<Value> argv[1] = {args[1]};
-    cb->Call(Null(isolate), 1, argv);
+    for(int ii = 1; ii < args.Length(); ii++) {
+      Local<Value> argv[1] = {args[ii]};
+      cb->Call(Null(isolate), 1, argv);
+    }
     return;
   }
   cb->Call(Null(isolate), 0, nullptr);

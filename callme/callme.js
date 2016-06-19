@@ -9,4 +9,4 @@ var callme = function (message) {
 }
 
 callback.callthis(callme)
-callback.callthis(callme, 'This is an important message')
+callback.callthis(callme, 'This is an important message', 'This one too')
