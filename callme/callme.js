@@ -1,6 +1,6 @@
-const callback = require('./build/Release/callback');
+const callback = require('./build/Release/callback')
 
-var callme = function( message ) {
+var callme = function (message) {
   if (message) {
     console.log(message)
   } else {
@@ -9,4 +9,4 @@ var callme = function( message ) {
 }
 
 callback.callthis(callme)
-callback.callthis_withthis(callme, "This is an important message")
+callback.callthis(callme, 'This is an important message')
