@@ -7,14 +7,11 @@ bool operator<(const sample &s1, const sample &s2) {
 }
 
 double avg_rainfall(location & loc) {
-  /*
   double total = 0;
   for (const auto &sample : loc.samples) {
     total += sample.rainfall;
   }
-  return total / loc.samples.size();*/
-
-  return 0.0;
+  return total / loc.samples.size();
 }
 
 /*
