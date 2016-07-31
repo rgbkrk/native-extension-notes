@@ -39,3 +39,5 @@ jspm_packages
 
 # Precompiled header files
 *.gch
+
+build
